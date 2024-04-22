@@ -7,5 +7,12 @@ import UIKit
 final class MovieListCoordinator: BaseCoordinator {
     private var navigationController: UINavigationController?
 
-    override func start() {}
+    override func start() {
+        guard let movieListModuleView = ModuleBuilder.makeMovieListModule(coordinator: self) as? MovieListViewController
+        else { return }
+        navigationController = UINavigationController(rootViewController: movieListModuleView)
+        if let navigationController = navigationController {
+            setAsRoot(navigationController)
+        }
+    }
 }
