@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "MovieListViewModel.startFetch():MovieListViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "updateViewData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in MovieListViewController.viewDidLoad():MovieListViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,10 +19,56 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "MovieListViewController.collectionView(_:cellForItemAt:):MovieListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "moviePostersCollection">
+            </PersistentString>
+            <PersistentString
+               value = "movieCollection[indexPath.item].poster.url">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MovieListViewController.viewDidLayoutSubviews():MovieListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "movieCollection">
+            </PersistentString>
+            <PersistentString
+               value = "moviePostersCollection">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "MovieListViewController.collectionView(_:numberOfItemsInSection:):MovieListViewController.swift">
          <PersistentStrings>
             <PersistentString
                value = "movieCollection.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MovieListViewModel.init():MovieListViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "updateViewData">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MovieListViewModel.loadImage(url:completion:):MovieListViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "loadImageService">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "MovieListViewController.loadImages(movieCollection:):MovieListViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "moviePostersCollection">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

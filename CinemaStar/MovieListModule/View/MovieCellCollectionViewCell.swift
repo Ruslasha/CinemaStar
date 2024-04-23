@@ -49,13 +49,17 @@ class MovieCell: UICollectionViewCell {
     func setupCell(movie: Doc) {
         filmTitle.text = movie.name
         ratingLabel.text = String(movie.rating.imdb)
-//        titleImageView.image = movie.poster.url
+
+        ImageCache.shared.loadImageFromURL(urlString: movie.poster.url) { [weak self] image in
+            DispatchQueue.main.async {
+                // Set the image to the image view
+                self?.titleImageView.image = image
+            }
+        }
     }
 
     func setImage(_ imageData: Data) {
-//        DispatchQueue.main.async {
-//            self.titleImageView.image = UIImage(data: imageData)
-//        }
+        titleImageView.image = UIImage(data: imageData)
     }
 
     // MARK: - Private methods
@@ -97,5 +101,38 @@ class MovieCell: UICollectionViewCell {
             ratingLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             ratingLabel.widthAnchor.constraint(equalTo: widthAnchor)
         ])
+    }
+}
+
+/// 1
+class ImageCache {
+    static let shared = ImageCache()
+    private let cache = NSCache<NSString, UIImage>()
+
+    func loadImageFromURL(urlString: String, completion: @escaping (UIImage?) -> Void) {
+        if let cachedImage = cache.object(forKey: urlString as NSString) {
+            completion(cachedImage)
+            return
+        }
+
+        guard let url = URL(string: urlString) else {
+            completion(nil)
+            return
+        }
+
+        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+            guard let data = data, error == nil else {
+                completion(nil)
+                return
+            }
+
+            let image = UIImage(data: data)
+
+            if let image = image {
+                self?.cache.setObject(image, forKey: urlString as NSString)
+            }
+
+            completion(image)
+        }.resume()
     }
 }

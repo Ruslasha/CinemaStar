@@ -7,8 +7,8 @@ import Foundation
 enum MovieListData {
     case initial
     case loading
-    case success
-    case failure
+    case success(Welcome)
+    case failure(Welcome)
 }
 
 // MARK: - Welcome
