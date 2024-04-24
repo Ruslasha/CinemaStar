@@ -45,15 +45,25 @@ final class MovieListViewController: UIViewController {
     private var movieCollection: [Doc] = []
     private var moviePostersCollection: [Data] = []
     private var loadImageService = LoadImageService()
-
-    private var viewModel: MovieListViewModelProtocol?
+    var movieCoordinator: MovieListCoordinator?
+    var viewModel: MovieListViewModelProtocol?
 
     // MARK: - Initializers
+
+    init(coordinator: MovieListCoordinator) {
+        super.init(nibName: nil, bundle: nil)
+        movieCoordinator = coordinator
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
-        viewModel = MovieListViewModel()
+//        viewModel = MovieListViewModel()
         super.viewDidLoad()
 
         setupView()
@@ -175,6 +185,14 @@ final class MovieListViewController: UIViewController {
             titleMovies.widthAnchor.constraint(equalToConstant: 300),
             titleMovies.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+}
+
+// MARK: - RecipesViewController + UICollectionViewDelegate
+
+extension MovieListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        movieCoordinator?.showMovie(movieInfo: movieCollection[indexPath.item])
     }
 }
 

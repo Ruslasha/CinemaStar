@@ -46,8 +46,8 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "176"
-            endingLineNumber = "176"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "setTitle()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,8 +110,8 @@
             filePath = "CinemaStar/MovieListModule/ViewModel/MovieListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
             landmarkName = "startFetch()"
             landmarkType = "7">
          </BreakpointContent>
@@ -120,6 +120,22 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F76E041E-AB48-48DC-A44E-B262FCCD9E0A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CinemaStar/MovieListModule/ViewModel/MovieListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "startFetch()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF869351-AD64-4EA7-B769-11BBBD8F6B08"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -135,22 +151,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CF869351-AD64-4EA7-B769-11BBBD8F6B08"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CinemaStar/MovieListModule/ViewModel/MovieListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "startFetch()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "15359858-8516-4E1B-84F2-1981575A986E"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -158,8 +158,8 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -222,9 +222,9 @@
             filePath = "CinemaStar/MovieListModule/ViewModel/MovieListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "init()"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "init(coordinator:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -254,8 +254,8 @@
             filePath = "CinemaStar/MovieListModule/ViewModel/MovieListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "loadImage(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +270,8 @@
             filePath = "CinemaStar/MovieListModule/ViewModel/MovieListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "loadImage(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -286,8 +286,8 @@
             filePath = "CinemaStar/MovieListModule/ViewModel/MovieListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "loadImage(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +302,8 @@
             filePath = "CinemaStar/MovieListModule/ViewModel/MovieListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "loadImage(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -334,8 +334,8 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -350,8 +350,8 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "loadImages(movieCollection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -366,8 +366,8 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -382,8 +382,8 @@
             filePath = "CinemaStar/MovieListModule/ViewModel/MovieListViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "startFetch()"
             landmarkType = "7">
          </BreakpointContent>
@@ -398,9 +398,203 @@
             filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "215"
+            endingLineNumber = "215"
             landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "343BDB9E-9C89-45DA-87A1-B53F67DAAE18"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CinemaStar/MovieListModule/View/MovieListViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "343BDB9E-9C89-45DA-87A1-B53F67DAAE18 - fd0b52e4f332b147"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CinemaStar.MovieListViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "CinemaStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/MovieListModule/View/MovieListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "193"
+                  endingLineNumber = "193">
+               </Location>
+               <Location
+                  uuid = "343BDB9E-9C89-45DA-87A1-B53F67DAAE18 - 8c9426c5dff760e0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CinemaStar.MovieListViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "CinemaStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/MovieListModule/View/MovieListViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "194"
+                  endingLineNumber = "194">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "16DF6CC6-50B8-4735-917D-A04AC4B758EA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - a672e84c3ef96b73"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CinemaStar.DetailMovieViewController.movie.getter : Swift.Optional&lt;CinemaStar.Doc&gt;"
+                  moduleName = "CinemaStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - 6378e1468f9cb37f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CinemaStar.DetailMovieViewController.movie.setter : Swift.Optional&lt;CinemaStar.Doc&gt;"
+                  moduleName = "CinemaStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - 7eec501bfd988ba3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CinemaStar.DetailMovieViewController.movie.modify : Swift.Optional&lt;CinemaStar.Doc&gt;"
+                  moduleName = "CinemaStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13">
+               </Location>
+               <Location
+                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - d41db6ebc7b2a367"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CinemaStar.DetailMovieViewController.movie.modify : Swift.Optional&lt;CinemaStar.Doc&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "CinemaStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - ae6c18da3ba4f4ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CinemaStar.DetailMovieViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CinemaStar.DetailMovieViewController"
+                  moduleName = "CinemaStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13">
+               </Location>
+               <Location
+                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - 69f269290d63d072"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CinemaStar.DetailMovieViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CinemaStar.DetailMovieViewController&gt;"
+                  moduleName = "CinemaStar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E0AF492-DE27-43C8-A24B-439A8B43F265"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CinemaStar/DetailMovieModule/ViewModel/DetailMovieViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "init(movieInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F82226A6-FD83-4934-9A09-AEA7ED3FC5A5"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CinemaStar/Builders/ModuleBuilder.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "makeDedtailMovieModule(coordinator:movieInfo:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

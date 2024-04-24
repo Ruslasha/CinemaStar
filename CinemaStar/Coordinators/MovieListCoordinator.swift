@@ -15,4 +15,20 @@ final class MovieListCoordinator: BaseCoordinator {
             setAsRoot(navigationController)
         }
     }
+
+    func showMovie(movieInfo: Doc) {
+        guard let detailMovieModule = ModuleBuilder.makeDedtailMovieModule(
+            coordinator: self,
+            movieInfo: movieInfo
+        ) as? DetailMovieViewController
+        else { return }
+        navigationController?.pushViewController(detailMovieModule, animated: true)
+    }
+
+    func closeMovie() {
+        guard (navigationController?.viewControllers.last as? DetailMovieViewController) != nil else {
+            return
+        }
+        navigationController?.popViewController(animated: true)
+    }
 }

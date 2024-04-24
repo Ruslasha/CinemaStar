@@ -13,6 +13,7 @@ final class MovieListViewModel: MovieListViewModelProtocol {
     private var movieCollection: [Doc] = []
     public var updateViewData: ((MovieListData) -> ())?
     private var loadImageService = LoadImageService()
+    var movieCoordinator: MovieListCoordinator?
 
     func startFetch() {
         loadDataFromAPI { result in
@@ -36,7 +37,12 @@ final class MovieListViewModel: MovieListViewModelProtocol {
         }
     }
 
-    init() {
+    func showDetailMovie(movieInfo: Doc) {
+        movieCoordinator?.showMovie(movieInfo: movieInfo)
+    }
+
+    init(coordinator: MovieListCoordinator) {
+        movieCoordinator = coordinator
         updateViewData?(.initial)
     }
 }
