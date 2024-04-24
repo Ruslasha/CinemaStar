@@ -418,36 +418,6 @@
             endingLineNumber = "194"
             landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "343BDB9E-9C89-45DA-87A1-B53F67DAAE18 - fd0b52e4f332b147"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CinemaStar.MovieListViewController.collectionView(_: __C.UICollectionView, cellForItemAt: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
-                  moduleName = "CinemaStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/MovieListModule/View/MovieListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "193"
-                  endingLineNumber = "193">
-               </Location>
-               <Location
-                  uuid = "343BDB9E-9C89-45DA-87A1-B53F67DAAE18 - 8c9426c5dff760e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CinemaStar.MovieListViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
-                  moduleName = "CinemaStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/MovieListModule/View/MovieListViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "194"
-                  endingLineNumber = "194">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -460,110 +430,24 @@
             filePath = "CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17">
+            startingLineNumber = "40"
+            endingLineNumber = "40">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "12"
-            endingLineNumber = "12"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - a672e84c3ef96b73"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CinemaStar.DetailMovieViewController.movie.getter : Swift.Optional&lt;CinemaStar.Doc&gt;"
-                  moduleName = "CinemaStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - 6378e1468f9cb37f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CinemaStar.DetailMovieViewController.movie.setter : Swift.Optional&lt;CinemaStar.Doc&gt;"
-                  moduleName = "CinemaStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - 7eec501bfd988ba3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CinemaStar.DetailMovieViewController.movie.modify : Swift.Optional&lt;CinemaStar.Doc&gt;"
-                  moduleName = "CinemaStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13">
-               </Location>
-               <Location
-                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - d41db6ebc7b2a367"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CinemaStar.DetailMovieViewController.movie.modify : Swift.Optional&lt;CinemaStar.Doc&gt; with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "CinemaStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/%3Ccompiler-generated%3E"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0">
-               </Location>
-               <Location
-                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - ae6c18da3ba4f4ac"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CinemaStar.DetailMovieViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; CinemaStar.DetailMovieViewController"
-                  moduleName = "CinemaStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13">
-               </Location>
-               <Location
-                  uuid = "F7EABC74-0C88-4D3E-B1E9-6C61BB27331F - 69f269290d63d072"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "CinemaStar.DetailMovieViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;CinemaStar.DetailMovieViewController&gt;"
-                  moduleName = "CinemaStar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ruslan/Documents/REPOSITORIES/CinemaStar/CinemaStar/CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "13"
-                  endingLineNumber = "13">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -586,7 +470,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F82226A6-FD83-4934-9A09-AEA7ED3FC5A5"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CinemaStar/Builders/ModuleBuilder.swift"
@@ -595,6 +479,54 @@
             startingLineNumber = "16"
             endingLineNumber = "16"
             landmarkName = "makeDedtailMovieModule(coordinator:movieInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E5E1687-BDF5-4B0C-BBED-33E2B94DF4A8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CinemaStar/DetailMovieModule/ViewModel/DetailMovieViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "startFetch()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6D01893F-116F-492C-B9A7-D0B807AE0F6A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewDidLayoutSubviews()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DBE64055-648C-4C94-B444-20C444D0E89E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CinemaStar/DetailMovieModule/View/DetailMovieViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewDidLayoutSubviews()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

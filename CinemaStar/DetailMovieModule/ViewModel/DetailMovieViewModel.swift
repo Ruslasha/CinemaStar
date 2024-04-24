@@ -18,10 +18,10 @@ final class DetailMovieViewModel: DetailMovieViewModelProtocol {
         self.movieInfo = movieInfo
     }
 
-//    func startFetch() {
-//        <#code#>
-//    }
-//
+    func startFetch() {
+        print(movieInfo)
+    }
+
 //    func loadImage(url: URL?, completion: @escaping (Data) -> ()) {
 //        <#code#>
 //    }
