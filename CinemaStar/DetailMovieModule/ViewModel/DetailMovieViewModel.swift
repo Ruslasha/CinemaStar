@@ -5,24 +5,24 @@ import Foundation
 import UIKit
 
 protocol DetailMovieViewModelProtocol {
-    var updateViewData: ((MovieListData) -> ())? { get set }
-    func startFetch()
-//    func loadImage(url: URL?, completion: @escaping (Data) -> ())
+    func getDetailedMovie(by id: Int, completion: @escaping (Result<MovieDetailed, Error>) -> ())
+    func loadImage(by urlString: String, completion: @escaping (Result<UIImage, Error>) -> ())
 }
 
 final class DetailMovieViewModel: DetailMovieViewModelProtocol {
-    var updateViewData: ((MovieListData) -> ())?
-    var movieInfo: Doc?
+    //    var updateViewData: ((MovieListData) -> ())?
+    //    var movieInfo: Doc?
+    private var networkService: NetworkServiceProtocol
 
-    init(movieInfo: Doc? = nil) {
-        self.movieInfo = movieInfo
+    init(networkService: NetworkServiceProtocol) {
+        self.networkService = networkService
     }
 
-    func startFetch() {
-        print(movieInfo)
+    func getDetailedMovie(by id: Int, completion: @escaping (Result<MovieDetailed, Error>) -> ()) {
+        networkService.getDetailedMovie(by: id, completion: completion)
     }
 
-//    func loadImage(url: URL?, completion: @escaping (Data) -> ()) {
-//        <#code#>
-//    }
+    func loadImage(by urlString: String, completion: @escaping (Result<UIImage, Error>) -> ()) {
+        networkService.loadImage(by: urlString, completion: completion)
+    }
 }

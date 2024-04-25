@@ -31,11 +31,17 @@ final class MovieListViewController: UIViewController {
 
     // MARK: - Public Properties
 
-    var viewData: MovieListData = .initial {
+//    var viewData: MovieListData = .initial {
+//        didSet {
+//            DispatchQueue.main.async {
+//                self.view.setNeedsLayout()
+//            }
+//        }
+//    }
+    var viewModel: MovieListViewModelProtocol?
+    var movies: [Movie]? {
         didSet {
-            DispatchQueue.main.async {
-                self.view.setNeedsLayout()
-            }
+            movieCollectionView?.reloadData()
         }
     }
 
@@ -46,12 +52,12 @@ final class MovieListViewController: UIViewController {
     private var moviePostersCollection: [Data] = []
     private var loadImageService = LoadImageService()
     var movieCoordinator: MovieListCoordinator?
-    var viewModel: MovieListViewModelProtocol?
 
     // MARK: - Initializers
 
-    init(coordinator: MovieListCoordinator) {
+    init(viewModel: MovieListViewModelProtocol, coordinator: MovieListCoordinator) {
         super.init(nibName: nil, bundle: nil)
+        self.viewModel = viewModel
         movieCoordinator = coordinator
     }
 
@@ -63,31 +69,30 @@ final class MovieListViewController: UIViewController {
     // MARK: - Life Cycle
 
     override func viewDidLoad() {
-//        viewModel = MovieListViewModel()
         super.viewDidLoad()
 
         setupView()
         updateView()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        switch viewData {
-        case .initial:
-            viewModel?.startFetch()
-        case .loading:
-            movieCollectionView?.reloadData()
-        case let .success(welcome):
-            movieCollection = welcome.docs
-
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.movieCollectionView?.reloadData()
-            }
-        case .failure:
-            break
-        }
-    }
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//
+//        switch viewData {
+//        case .initial:
+//            viewModel?.startFetch()
+//        case .loading:
+//            movieCollectionView?.reloadData()
+//        case let .success(welcome):
+//            movieCollection = welcome.docs
+//
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+//                self.movieCollectionView?.reloadData()
+//            }
+//        case .failure:
+//            break
+//        }
+//    }
 
     // MARK: - Public Methods
 
@@ -95,20 +100,30 @@ final class MovieListViewController: UIViewController {
 
     // MARK: - Private Methods
 
-    private func loadImages(movieCollection: [Doc]) {
-        for movieData in movieCollection {
-            viewModel?.loadImage(
-                url: URL(string: movieData.poster.url),
-                completion: { imageData in
-                    self.moviePostersCollection.append(imageData)
-                }
-            )
-        }
-    }
+//    private func loadImages(movieCollection: [Doc]) {
+//        for movieData in movieCollection {
+//            viewModel?.loadImage(
+//                url: URL(string: movieData.poster.url),
+//                completion: { imageData in
+//                    self.moviePostersCollection.append(imageData)
+//                }
+//            )
+//        }
+//    }
 
     private func updateView() {
-        viewModel?.updateViewData = { [weak self] viewData in
-            self?.viewData = viewData
+//        viewModel?.updateViewData = { [weak self] viewData in
+//            self?.viewData = viewData
+//        }
+        viewModel?.getMovies { result in
+            DispatchQueue.main.async {
+                switch result {
+                case let .success(movies):
+                    self.movies = movies
+                case let .failure(error):
+                    print(error)
+                }
+            }
         }
     }
 
@@ -192,7 +207,7 @@ final class MovieListViewController: UIViewController {
 
 extension MovieListViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        movieCoordinator?.showMovie(movieInfo: movieCollection[indexPath.item])
+        movieCoordinator?.showMovie(movies?[indexPath.item].id ?? 0)
     }
 }
 
@@ -200,7 +215,7 @@ extension MovieListViewController: UICollectionViewDelegate {
 
 extension MovieListViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        movieCollection.count
+        movies?.count ?? 0
     }
 
     func collectionView(
@@ -212,7 +227,7 @@ extension MovieListViewController: UICollectionViewDataSource {
             for: indexPath
         ) as? MovieCell else { return UICollectionViewCell() }
 
-        cell.setupCell(movie: movieCollection[indexPath.item])
+        cell.setupCell(movies?[indexPath.item], viewModel: viewModel)
         return cell
     }
 }

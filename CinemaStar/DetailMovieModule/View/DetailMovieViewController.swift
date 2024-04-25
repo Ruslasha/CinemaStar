@@ -41,8 +41,7 @@ final class DetailMovieViewController: UIViewController {
         }
     }
 
-    var movie: Doc?
-    var viewModel: DetailMovieViewModel?
+//    var movie: Doc?
 
     private lazy var mainTableView: UITableView = {
         let tableView = UITableView()
@@ -60,13 +59,23 @@ final class DetailMovieViewController: UIViewController {
 
 //    private let sections: [SectionType] = [.title, .description, .actors, .language, .recomendations]
     private let sections: [SectionType] = [.title, .description, .actors]
-
-    var viewData: MovieListData = .initial {
+    private var viewModel: DetailMovieViewModel?
+    private let id: Int
+    private var movieDetail: MovieDetailed? {
         didSet {
-            DispatchQueue.main.async {
-                self.view.setNeedsLayout()
-            }
+            mainTableView.reloadData()
         }
+    }
+
+    init(id: Int, viewModel: DetailMovieViewModel) {
+        self.id = id
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        id = 0
+        super.init(coder: coder)
     }
 
     override func viewDidLoad() {
@@ -74,20 +83,19 @@ final class DetailMovieViewController: UIViewController {
 
         setupGradient()
         setView()
+        getMovieDetail()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        switch viewData {
-        case .initial:
-            viewModel?.startFetch()
-        case .loading:
-            viewModel?.startFetch()
-        case let .success(welcome):
-            viewModel?.startFetch()
-        case .failure:
-            break
+    private func getMovieDetail() {
+        viewModel?.getDetailedMovie(by: id) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case let .success(movieDetail):
+                    self.movieDetail = movieDetail
+                case let .failure(error):
+                    print(error)
+                }
+            }
         }
     }
 
@@ -143,4 +151,12 @@ extension DetailMovieViewController: UITableViewDelegate {
         view.setTitle(text: headerTitle)
         return view
     }
+
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if sections[section].headerTitle != nil {
+            return 36
+        }
+        return 0
+    }
+
 }

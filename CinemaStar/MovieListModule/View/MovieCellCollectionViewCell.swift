@@ -11,6 +11,10 @@ class MovieCell: UICollectionViewCell {
 
     // MARK: - Constants
 
+    private enum Constants {
+        static let starMark = "⭐"
+    }
+
     static let reuseID = "MovieCellCollectionViewCell"
 
     // MARK: - Visual Components
@@ -46,16 +50,31 @@ class MovieCell: UICollectionViewCell {
 
     // MARK: - Public methods
 
-    func setupCell(movie: Doc) {
-        filmTitle.text = movie.name
-        ratingLabel.text = String(movie.rating.imdb)
-
-        ImageCache.shared.loadImageFromURL(urlString: movie.poster.url) { [weak self] image in
+    func setupCell(_ movie: Movie?, viewModel: MovieListViewModelProtocol?) {
+        guard let movie else { return }
+        viewModel?.loadImage(by: movie.posterURL) { result in
             DispatchQueue.main.async {
-                // Set the image to the image view
-                self?.titleImageView.image = image
+                switch result {
+                case let .success(image):
+                    self.titleImageView.image = image
+                case let .failure(error):
+                    print(error)
+                }
             }
         }
+        filmTitle.text = movie.name
+
+        let starMark = Constants.starMark
+        ratingLabel.text = "\(starMark) \(movie.rating)"
+
+        filmTitle.text = movie.name
+
+//        ImageCache.shared.loadImageFromURL(urlString: movie.poster.url) { [weak self] image in
+//            DispatchQueue.main.async {
+//                // Set the image to the image view
+//                self?.titleImageView.image = image
+//            }
+//        }
     }
 
     func setImage(_ imageData: Data) {

@@ -7,8 +7,18 @@ import UIKit
 final class MovieListCoordinator: BaseCoordinator {
     private var navigationController: UINavigationController?
 
+    // MARK: - Private Properties
+
+    private let builder = ModuleBuilder()
+
+    // MARK: - Initializers
+
+//    init(builder: ModuleBuilder) {
+//        self.builder = builder
+//    }
+
     override func start() {
-        guard let movieListModuleView = ModuleBuilder.makeMovieListModule(coordinator: self) as? MovieListViewController
+        guard let movieListModuleView = builder.makeMovieListModule(coordinator: self) as? MovieListViewController
         else { return }
         navigationController = UINavigationController(rootViewController: movieListModuleView)
         if let navigationController = navigationController {
@@ -16,10 +26,10 @@ final class MovieListCoordinator: BaseCoordinator {
         }
     }
 
-    func showMovie(movieInfo: Doc) {
-        guard let detailMovieModule = ModuleBuilder.makeDedtailMovieModule(
+    func showMovie(_ id: Int) {
+        guard let detailMovieModule = builder.makeDedtailMovieModule(
             coordinator: self,
-            movieInfo: movieInfo
+            id: id
         ) as? DetailMovieViewController
         else { return }
         navigationController?.pushViewController(detailMovieModule, animated: true)

@@ -1,48 +1,56 @@
 // MovieListViewModel.swift
 // Copyright © RoadMap. All rights reserved.
 
-import Foundation
+import UIKit
 
 protocol MovieListViewModelProtocol {
-    var updateViewData: ((MovieListData) -> ())? { get set }
-    func startFetch()
-    func loadImage(url: URL?, completion: @escaping (Data) -> ())
+    func getMovies(completion: @escaping (Result<[Movie], Error>) -> ())
+    func loadImage(by urlString: String, completion: @escaping (Result<UIImage, Error>) -> ())
 }
 
 final class MovieListViewModel: MovieListViewModelProtocol {
-    private var movieCollection: [Doc] = []
-    public var updateViewData: ((MovieListData) -> ())?
-    private var loadImageService = LoadImageService()
-    var movieCoordinator: MovieListCoordinator?
+//    private var movieCollection: [Doc] = []
+//    public var updateViewData: ((MovieListData) -> ())?
+//    private var loadImageService = LoadImageService()
+    private var networkService: NetworkServiceProtocol
+    private var movieCoordinator: MovieListCoordinator
 
-    func startFetch() {
-        loadDataFromAPI { result in
-            switch result {
-            case let .success(movies):
-                self.updateViewData?(.success(Welcome(docs: movies.docs)))
-            case let .failure(error):
-                break
-            }
-        }
+//    func startFetch() {
+//        loadDataFromAPI { result in
+//            switch result {
+//            case let .success(movies):
+//                self.updateViewData?(.success(Welcome(docs: movies.docs)))
+//            case let .failure(error):
+//                break
+//            }
+//        }
+//    }
+//
+//    func loadImage(url: URL?, completion: @escaping (Data) -> ()) {
+//        loadImageService.loadImage(url: url) { data, _, _ in
+//            guard let data = data else {
+//                return
+//            }
+//            DispatchQueue.main.async {
+//                completion(data)
+//            }
+//        }
+//    }
+    func getMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
+        networkService.getMovies(completion: completion)
     }
 
-    func loadImage(url: URL?, completion: @escaping (Data) -> ()) {
-        loadImageService.loadImage(url: url) { data, _, _ in
-            guard let data = data else {
-                return
-            }
-            DispatchQueue.main.async {
-                completion(data)
-            }
-        }
+    func loadImage(by urlString: String, completion: @escaping (Result<UIImage, Error>) -> ()) {
+        networkService.loadImage(by: urlString, completion: completion)
     }
 
-    func showDetailMovie(movieInfo: Doc) {
-        movieCoordinator?.showMovie(movieInfo: movieInfo)
+    func showDetailMovie(id: Int) {
+        movieCoordinator.showMovie(id)
     }
 
-    init(coordinator: MovieListCoordinator) {
+    init(networkService: NetworkServiceProtocol, coordinator: MovieListCoordinator) {
+        self.networkService = networkService
         movieCoordinator = coordinator
-        updateViewData?(.initial)
+//        updateViewData?(.initial)
     }
 }

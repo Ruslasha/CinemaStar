@@ -5,15 +5,20 @@ import Foundation
 import UIKit
 
 final class ModuleBuilder {
-    static func makeMovieListModule(coordinator: MovieListCoordinator) -> UIViewController {
-        let viewController = MovieListViewController(coordinator: coordinator)
-        viewController.viewModel = MovieListViewModel(coordinator: coordinator)
+    var queryBuilder = QueryBuilder()
+    private lazy var networkService = NetworkService(requestCreator: queryBuilder)
+
+    func makeMovieListModule(coordinator: MovieListCoordinator) -> UIViewController {
+        let viewModel = MovieListViewModel(networkService: networkService, coordinator: coordinator)
+        let viewController = MovieListViewController(viewModel: viewModel, coordinator: coordinator)
+//        viewController.viewModel = MovieListViewModel(networkService: networkService, coordinator: coordinator)
         return viewController
     }
 
-    static func makeDedtailMovieModule(coordinator: MovieListCoordinator, movieInfo: Doc) -> UIViewController {
-        let viewController = DetailMovieViewController()
-        viewController.viewModel = DetailMovieViewModel(movieInfo: movieInfo)
+    func makeDedtailMovieModule(coordinator: MovieListCoordinator, id: Int) -> UIViewController {
+        let viewModel = DetailMovieViewModel(networkService: networkService)
+        let viewController = DetailMovieViewController(id: id, viewModel: viewModel)
+//        viewController.viewModel = DetailMovieViewModel(id: id)
         return viewController
     }
 }
