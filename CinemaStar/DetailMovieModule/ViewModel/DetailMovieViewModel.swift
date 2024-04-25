@@ -6,7 +6,7 @@ import UIKit
 
 protocol DetailMovieViewModelProtocol {
     var updateViewData: ((MovieListData) -> ())? { get set }
-//    func startFetch()
+    func startFetch()
 //    func loadImage(url: URL?, completion: @escaping (Data) -> ())
 }
 
