@@ -34,6 +34,12 @@ final class ActorsTableViewCell: UITableViewCell {
 
     // MARK: - Private Properties
 
+    private var actors: [Person]? {
+        didSet {
+            actorsCollectionView.reloadData()
+        }
+    }
+
     // MARK: - Initializers
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -49,6 +55,10 @@ final class ActorsTableViewCell: UITableViewCell {
     }
 
     // MARK: - Public Methods
+
+    func setupCell(movieDetail: MovieDetailed?) {
+        actors = movieDetail?.actors
+    }
 
     // MARK: - Private Methods
 
@@ -81,7 +91,7 @@ final class ActorsTableViewCell: UITableViewCell {
 
 extension ActorsTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        7
+        actors?.count ?? 0
     }
 
     func collectionView(
@@ -92,7 +102,7 @@ extension ActorsTableViewCell: UICollectionViewDataSource {
             withReuseIdentifier: ActorsCollectionViewCell.reuseId,
             for: indexPath
         ) as? ActorsCollectionViewCell else { return .init() }
-        cell.setupCell(with: "Mark")
+        cell.setupCell(actorName: actors?[indexPath.item])
         return cell
     }
 }

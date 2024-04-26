@@ -8,9 +8,12 @@ final class HeaderTableViewCell: UITableViewCell {
 
     private enum Constants {
         static let buttonTitle = "Смотреть"
+        static let starMark = "⭐"
 //        static let interItemInset = 16.0
 //        static let imageRatio = 200.0 / 170.0
     }
+
+    private let networkService = NetworkService(requestCreator: QueryBuilder())
 
     static let reuseId = String(describing: HeaderTableViewCell.self)
 
@@ -26,6 +29,7 @@ final class HeaderTableViewCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .left
+        label.numberOfLines = 2
         label.font = .verdana(ofSize: 16)
         label.textColor = .white
         return label
@@ -42,6 +46,24 @@ final class HeaderTableViewCell: UITableViewCell {
     }()
 
     // MARK: - Public Properties
+
+    func setupCell(movieDetail: MovieDetailed?) {
+        networkService.loadImage(by: movieDetail?.posterURL ?? "") { result in
+            DispatchQueue.main.async {
+                switch result {
+                case let .success(image):
+                    self.movieImageView.image = image
+                case let .failure(error):
+                    print(error)
+                }
+            }
+        }
+        let rating = String(format: "%0.1f", movieDetail?.rating ?? 0)
+        guard let name = movieDetail?.name else { return }
+        titleLabel.text = "\(String(describing: name))\n\(Constants.starMark) \(rating)"
+
+//        ratingLabel.text = "\(Constants.starMark) \(rating)"
+    }
 
     // MARK: - Private Properties
 

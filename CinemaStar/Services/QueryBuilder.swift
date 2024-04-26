@@ -49,7 +49,7 @@ final class QueryBuilder: QueryBuilderProtocol {
         var components = URLComponents()
         components.scheme = Constants.sheme
         components.host = Constants.host
-        components.path = Constants.path
+        components.path = Constants.path + "/search"
         components.queryItems = makeMoviesQueryItems()
         guard let url = components.url else {
             return nil

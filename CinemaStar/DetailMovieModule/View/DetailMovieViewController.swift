@@ -34,9 +34,9 @@ final class DetailMovieViewController: UIViewController {
             case .actors:
                 return ActorsTableViewCell()
             case .language:
-                return UITableViewCell()
+                return LanguageTableViewCell()
             case .recomendations:
-                return UITableViewCell()
+                return RecomendationsTableViewCell()
             }
         }
     }
@@ -58,7 +58,7 @@ final class DetailMovieViewController: UIViewController {
     // MARK: - Private Properties
 
 //    private let sections: [SectionType] = [.title, .description, .actors, .language, .recomendations]
-    private let sections: [SectionType] = [.title, .description, .actors]
+    private let sections: [SectionType] = [.title, .description, .actors, .language, .recomendations]
     private var viewModel: DetailMovieViewModel?
     private let id: Int
     private var movieDetail: MovieDetailed? {
@@ -136,7 +136,19 @@ extension DetailMovieViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        sections[indexPath.section].sectionCellType
+        let cell = sections[indexPath.section].sectionCellType
+        if let cell = cell as? HeaderTableViewCell {
+            cell.setupCell(movieDetail: movieDetail)
+        } else if let cell = cell as? DescriptionTableViewCell {
+            cell.setupCell(movieDetail: movieDetail)
+        } else if let cell = cell as? ActorsTableViewCell {
+            cell.setupCell(movieDetail: movieDetail)
+        } else if let cell = cell as? LanguageTableViewCell {
+            cell.setupCell(movieDetail: movieDetail)
+        } else if let cell = cell as? RecomendationsTableViewCell {
+            cell.setupCell(movieDetail: movieDetail)
+        }
+        return cell
     }
 }
 
@@ -158,5 +170,4 @@ extension DetailMovieViewController: UITableViewDelegate {
         }
         return 0
     }
-
 }

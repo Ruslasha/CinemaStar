@@ -18,17 +18,12 @@ final class DescriptionTableViewCell: UITableViewCell {
         label.textColor = .white
         label.textAlignment = .left
         label.font = .verdana(ofSize: 14)
-        label.text = """
-        это описание фильма это описание фильма это описание фильма это описание фильма
-        это описание фильма это описание фильма это описание фильма это описание фильма
-        """
         label.numberOfLines = 0
         return label
     }()
 
     private let detailsLabel: UILabel = {
         let label = UILabel()
-        label.text = "2027 / ЕЕЕЕ / ККК "
         label.textAlignment = .left
         label.font = .verdana(ofSize: 14)
         label.textColor = .darkGray
@@ -56,6 +51,15 @@ final class DescriptionTableViewCell: UITableViewCell {
     // MARK: - Life Cycle
 
     // MARK: - Public Methods
+
+    func setupCell(movieDetail: MovieDetailed?) {
+        guard let movieDetail else { return }
+        descriptionLabel.text = movieDetail.description
+        let year = movieDetail.year
+        let country = movieDetail.country
+        let type = movieDetail.type
+        detailsLabel.text = "\(year) / \(country) / \(type)"
+    }
 
     // MARK: - Private Methods
 
