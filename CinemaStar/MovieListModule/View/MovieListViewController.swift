@@ -31,13 +31,6 @@ final class MovieListViewController: UIViewController {
 
     // MARK: - Public Properties
 
-//    var viewData: MovieListData = .initial {
-//        didSet {
-//            DispatchQueue.main.async {
-//                self.view.setNeedsLayout()
-//            }
-//        }
-//    }
     var viewModel: MovieListViewModelProtocol?
     var movies: [Movie]? {
         didSet {
@@ -75,46 +68,13 @@ final class MovieListViewController: UIViewController {
         updateView()
     }
 
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//        switch viewData {
-//        case .initial:
-//            viewModel?.startFetch()
-//        case .loading:
-//            movieCollectionView?.reloadData()
-//        case let .success(welcome):
-//            movieCollection = welcome.docs
-//
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                self.movieCollectionView?.reloadData()
-//            }
-//        case .failure:
-//            break
-//        }
-//    }
-
     // MARK: - Public Methods
 
     // MARK: - IBAction
 
     // MARK: - Private Methods
 
-//    private func loadImages(movieCollection: [Doc]) {
-//        for movieData in movieCollection {
-//            viewModel?.loadImage(
-//                url: URL(string: movieData.poster.url),
-//                completion: { imageData in
-//                    self.moviePostersCollection.append(imageData)
-//                }
-//            )
-//        }
-//    }
-
     private func updateView() {
-//        viewModel?.updateViewData = { [weak self] viewData in
-//            self?.viewData = viewData
-//        }
         viewModel?.getMovies { result in
             DispatchQueue.main.async {
                 switch result {
@@ -128,6 +88,7 @@ final class MovieListViewController: UIViewController {
     }
 
     private func setupView() {
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         setTitle()
         setMovieCollection()
     }

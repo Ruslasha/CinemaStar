@@ -9,8 +9,6 @@ final class HeaderTableViewCell: UITableViewCell {
     private enum Constants {
         static let buttonTitle = "Смотреть"
         static let starMark = "⭐"
-//        static let interItemInset = 16.0
-//        static let imageRatio = 200.0 / 170.0
     }
 
     private let networkService = NetworkService(requestCreator: QueryBuilder())
@@ -22,7 +20,7 @@ final class HeaderTableViewCell: UITableViewCell {
     private lazy var movieImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 8
-        imageView.backgroundColor = .lightGray
+        imageView.clipsToBounds = true
         return imageView
     }()
 
@@ -37,7 +35,7 @@ final class HeaderTableViewCell: UITableViewCell {
 
     private lazy var watchButton: UIButton = {
         let button = UIButton()
-        button.backgroundColor = .lightGray
+        button.backgroundColor = .appButton
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .verdana(ofSize: 14)
         button.setTitle(Constants.buttonTitle, for: .normal)

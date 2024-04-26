@@ -40,14 +40,12 @@ final class NetworkService {
             guard let self else {
                 return
             }
-            // Try to download data
             guard let downloadedData = data else {
                 if let error {
                     completion(.failure(error))
                 }
                 return
             }
-            // Try to decode downloaded data
             do {
                 let parsedData = try self.decoder.decode(parseProtocol, from: downloadedData)
                 completion(.success(parsedData))

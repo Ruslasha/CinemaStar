@@ -83,13 +83,13 @@ final class ActorsCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             actorImageView.topAnchor.constraint(equalTo: topAnchor),
             actorImageView.heightAnchor.constraint(equalToConstant: 72),
-            actorImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11),
-            actorImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11),
+            actorImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6),
+            actorImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 6),
 
             nameLabel.topAnchor.constraint(equalTo: actorImageView.bottomAnchor),
             nameLabel.heightAnchor.constraint(equalToConstant: 24),
             nameLabel.widthAnchor.constraint(equalToConstant: 60),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11)
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0)
         ])
     }
 }

@@ -41,14 +41,13 @@ final class DetailMovieViewController: UIViewController {
         }
     }
 
-//    var movie: Doc?
-
     private lazy var mainTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
         tableView.rowHeight = UITableView.automaticDimension
         tableView.showsVerticalScrollIndicator = false
         tableView.separatorStyle = .none
+        tableView.allowsSelection = false
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(TitleHeaderView.self, forHeaderFooterViewReuseIdentifier: TitleHeaderView.reuseId)
@@ -57,7 +56,6 @@ final class DetailMovieViewController: UIViewController {
 
     // MARK: - Private Properties
 
-//    private let sections: [SectionType] = [.title, .description, .actors, .language, .recomendations]
     private let sections: [SectionType] = [.title, .description, .actors, .language, .recomendations]
     private var viewModel: DetailMovieViewModel?
     private let id: Int
@@ -100,6 +98,8 @@ final class DetailMovieViewController: UIViewController {
     }
 
     private func setView() {
+        navigationController?.navigationBar.tintColor = .white
+
         view.addSubview(mainTableView)
         mainTableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([

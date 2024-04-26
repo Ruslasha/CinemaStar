@@ -3,6 +3,23 @@
 
 import Foundation
 
+/// Тип
+enum MovieType: String, Codable {
+    /// Фильм
+    case movie
+    /// Сериал
+    case tvSeries = "tv-series"
+    /// Описание типа
+    var typeDescription: String {
+        switch self {
+        case .movie:
+            return "Фильм"
+        case .tvSeries:
+            return "Сериал"
+        }
+    }
+}
+
 /// Детальная информация
 struct MovieDetailed {
     let posterURL: String
@@ -11,7 +28,7 @@ struct MovieDetailed {
     let description: String
     let year: Int
     let country: String
-    let type: String
+    let type: MovieType
     let actors: [Person]?
     let language: String
     let recommendedMovies: [SimilarMovie?]
@@ -25,7 +42,7 @@ struct MovieDetailed {
         country = dto.countries.first?.name ?? ""
         type = dto.type
         actors = dto.persons
-        language = dto.spokenLanguages?.first ?? ""
+        language = dto.spokenLanguages?.first ?? "Русский"
         recommendedMovies = dto.similarMovies ?? []
     }
 }

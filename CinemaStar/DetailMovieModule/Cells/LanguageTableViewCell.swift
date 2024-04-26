@@ -13,7 +13,6 @@ final class LanguageTableViewCell: UITableViewCell {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Language"
         label.textAlignment = .left
         label.font = .verdana(ofSize: 14)
         label.textColor = .darkGray

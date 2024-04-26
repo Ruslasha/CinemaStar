@@ -17,7 +17,8 @@ final class RecomendationCollectionViewCell: UICollectionViewCell {
 
     private let movieImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .lightGray
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
         return imageView
     }()
 
@@ -25,7 +26,7 @@ final class RecomendationCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.numberOfLines = 2
-        label.font = .verdana(ofSize: 8)
+        label.font = .verdana(ofSize: 16)
         label.textColor = .white
         return label
     }()
@@ -82,14 +83,14 @@ final class RecomendationCollectionViewCell: UICollectionViewCell {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             movieImageView.topAnchor.constraint(equalTo: topAnchor),
-            movieImageView.heightAnchor.constraint(equalToConstant: 170),
+            movieImageView.heightAnchor.constraint(equalToConstant: 220),
             movieImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -11),
             movieImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11),
 
             nameLabel.topAnchor.constraint(equalTo: movieImageView.bottomAnchor),
             nameLabel.heightAnchor.constraint(equalToConstant: 24),
-            nameLabel.widthAnchor.constraint(equalToConstant: 60),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 11)
+            nameLabel.widthAnchor.constraint(equalToConstant: 120),
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
     }
 }

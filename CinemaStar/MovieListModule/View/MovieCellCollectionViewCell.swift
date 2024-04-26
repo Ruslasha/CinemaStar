@@ -19,7 +19,12 @@ class MovieCell: UICollectionViewCell {
 
     // MARK: - Visual Components
 
-    private let titleImageView = UIImageView()
+    private lazy var titleImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.layer.cornerRadius = 8
+        imageView.clipsToBounds = true
+        return imageView
+    }()
 
     private let filmTitle: UILabel = {
         let label = UILabel()
@@ -65,16 +70,10 @@ class MovieCell: UICollectionViewCell {
         filmTitle.text = movie.name
 
         let starMark = Constants.starMark
-        ratingLabel.text = "\(starMark) \(movie.rating)"
+
+        ratingLabel.text = "\(starMark) \(String(format: "%0.1f", movie.rating))"
 
         filmTitle.text = movie.name
-
-//        ImageCache.shared.loadImageFromURL(urlString: movie.poster.url) { [weak self] image in
-//            DispatchQueue.main.async {
-//                // Set the image to the image view
-//                self?.titleImageView.image = image
-//            }
-//        }
     }
 
     func setImage(_ imageData: Data) {
@@ -97,6 +96,7 @@ class MovieCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             titleImageView.topAnchor.constraint(equalTo: topAnchor),
             titleImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
+            titleImageView.heightAnchor.constraint(equalToConstant: 170),
             titleImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             titleImageView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])

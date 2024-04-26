@@ -57,7 +57,7 @@ final class DescriptionTableViewCell: UITableViewCell {
         descriptionLabel.text = movieDetail.description
         let year = movieDetail.year
         let country = movieDetail.country
-        let type = movieDetail.type
+        let type = movieDetail.type.typeDescription
         detailsLabel.text = "\(year) / \(country) / \(type)"
     }
 

@@ -17,9 +17,10 @@ struct MovieDTO: Codable {
     let description: String
     let year: Int
     let countries: [Country]
-    let type: String
+    let type: MovieType
     let persons: [Person]?
     let spokenLanguages: [String]?
+//    let spokenLanguages: [SpokenLanguages]?
     let similarMovies: [SimilarMovie]?
 }
 
@@ -30,6 +31,11 @@ struct Poster: Codable {
 
 /// 1
 struct Country: Codable {
+    let name: String
+}
+
+/// 1
+struct SpokenLanguages: Codable {
     let name: String
 }
 
