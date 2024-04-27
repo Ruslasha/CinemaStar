@@ -11,13 +11,21 @@ final class DescriptionTableViewCell: UITableViewCell {
 
     // MARK: - Visual Components
 
+    var onReload: (() -> ())?
+
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.textAlignment = .left
         label.font = .verdana(ofSize: 14)
-        label.numberOfLines = 0
         return label
+    }()
+
+    private lazy var textHiddenButton: UIButton = {
+        let button = UIButton()
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(textHiddenButtonDidTapped), for: .touchUpInside)
+        return button
     }()
 
     private let detailsLabel: UILabel = {
@@ -44,8 +52,15 @@ final class DescriptionTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func setupCell(movieDetail: MovieDetail?) {
+    func setupCell(movieDetail: MovieDetail?, isTextExpended: Bool) {
         guard let movieDetail else { return }
+        if isTextExpended {
+            descriptionLabel.numberOfLines = 0
+            textHiddenButton.setImage(UIImage(systemName: "chevron.up"), for: .normal)
+        } else {
+            descriptionLabel.numberOfLines = 5
+            textHiddenButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        }
         descriptionLabel.text = movieDetail.description
         let year = movieDetail.year
         let country = movieDetail.country
@@ -59,16 +74,22 @@ final class DescriptionTableViewCell: UITableViewCell {
         backgroundColor = .clear
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         detailsLabel.translatesAutoresizingMaskIntoConstraints = false
+        textHiddenButton.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(descriptionLabel)
+        contentView.addSubview(textHiddenButton)
         contentView.addSubview(detailsLabel)
     }
 
     private func setConstraints() {
         NSLayoutConstraint.activate([
             descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
-            descriptionLabel.heightAnchor.constraint(equalToConstant: 100),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -36),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+
+            textHiddenButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: -20),
+            textHiddenButton.heightAnchor.constraint(lessThanOrEqualToConstant: 20),
+            textHiddenButton.widthAnchor.constraint(lessThanOrEqualToConstant: 20),
+            textHiddenButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
 
             detailsLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 10),
             detailsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
@@ -76,5 +97,10 @@ final class DescriptionTableViewCell: UITableViewCell {
             detailsLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             detailsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
+    }
+
+    @objc private func textHiddenButtonDidTapped() {
+        descriptionLabel.numberOfLines = 0
+        onReload?()
     }
 }

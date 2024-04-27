@@ -69,6 +69,8 @@ final class DetailMovieViewController: UIViewController {
         }
     }
 
+    private var isTextExpended = false
+
     init(id: Int, viewModel: DetailMovieViewModel) {
         self.id = id
         self.viewModel = viewModel
@@ -144,7 +146,11 @@ extension DetailMovieViewController: UITableViewDataSource {
         if let cell = cell as? HeaderTableViewCell {
             cell.setupCell(movieDetail: movieDetail)
         } else if let cell = cell as? DescriptionTableViewCell {
-            cell.setupCell(movieDetail: movieDetail)
+            cell.onReload = {
+                self.isTextExpended.toggle()
+                tableView.reloadData()
+            }
+            cell.setupCell(movieDetail: movieDetail, isTextExpended: isTextExpended)
         } else if let cell = cell as? ActorsTableViewCell {
             cell.setupCell(movieDetail: movieDetail)
         } else if let cell = cell as? LanguageTableViewCell {
