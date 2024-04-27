@@ -6,7 +6,6 @@ import Foundation
 protocol APIResource {
     associatedtype ModelType: Decodable
     var methodPath: String { get }
-//    var id: String? { get }
 }
 
 extension APIResource {

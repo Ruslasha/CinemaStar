@@ -61,16 +61,6 @@ final class NetworkService: NetworkServiceProtocol {
     private lazy var detailRequest = APIRequest(resource: resourceDetail)
 
     func getMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
-//        let request = queryBuilder?.createMoviesURLRequest()
-//        getData(request: request, parseProtocol: Response.self) { result in
-//            switch result {
-//            case let .success(response):
-//                let movies = self.transToMovies(response)
-//                completion(.success(movies))
-//            case let .failure(error):
-//                completion(.failure(error))
-//            }
-//        }
         request.execute { result in
             switch result {
             case let .some(movies):

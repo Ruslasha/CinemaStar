@@ -18,7 +18,6 @@ extension ImageRequest: NetworkRequest {
     }
 
     func execute(withCompletion completion: @escaping (UIImage?) -> Void) {
-//        load(url, withCompletion: completion)
         load(url: url, withCompletion: completion)
     }
 

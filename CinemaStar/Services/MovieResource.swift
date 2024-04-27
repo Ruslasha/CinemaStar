@@ -3,7 +3,7 @@
 
 import Foundation
 
-/// 1
+/// Ресурс для фильмов
 struct MovieResource: APIResource {
     typealias ModelType = Response
 
@@ -17,7 +17,7 @@ struct MovieResource: APIResource {
     }
 }
 
-/// 1
+/// Ресурс для детальной информации
 struct MovieDetailResource: APIResource {
     typealias ModelType = MovieDTO
 
