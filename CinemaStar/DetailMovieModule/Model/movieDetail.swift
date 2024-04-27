@@ -21,7 +21,7 @@ enum MovieType: String, Codable {
 }
 
 /// Детальная информация
-struct MovieDetailed {
+struct MovieDetail {
     let posterURL: String
     let name: String
     let rating: Double

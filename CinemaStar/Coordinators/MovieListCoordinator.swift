@@ -13,10 +13,6 @@ final class MovieListCoordinator: BaseCoordinator {
 
     // MARK: - Initializers
 
-//    init(builder: ModuleBuilder) {
-//        self.builder = builder
-//    }
-
     override func start() {
         guard let movieListModuleView = builder.makeMovieListModule(coordinator: self) as? MovieListViewController
         else { return }

@@ -3,6 +3,7 @@
 
 import UIKit
 
+/// Заголовок ячеек
 final class TitleHeaderView: UITableViewHeaderFooterView {
     // MARK: - Constants
 

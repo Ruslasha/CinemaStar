@@ -3,6 +3,7 @@
 
 import UIKit
 
+/// Ячейка с рекомендациями
 final class RecomendationsTableViewCell: UITableViewCell {
     // MARK: - Constants
 
@@ -56,7 +57,7 @@ final class RecomendationsTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func setupCell(movieDetail: MovieDetailed?) {
+    func setupCell(movieDetail: MovieDetail?) {
         guard let movieDetail else { return }
         similarMovies = movieDetail.recommendedMovies
     }

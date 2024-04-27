@@ -8,6 +8,7 @@ protocol MovieListViewModelProtocol {
     func loadImage(by urlString: String, completion: @escaping (Result<UIImage, Error>) -> ())
 }
 
+/// Вью модель экрана с фильмами
 final class MovieListViewModel: MovieListViewModelProtocol {
     private var networkService: NetworkServiceProtocol
     private var movieCoordinator: MovieListCoordinator

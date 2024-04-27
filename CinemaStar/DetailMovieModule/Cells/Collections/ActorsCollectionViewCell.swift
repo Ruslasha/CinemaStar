@@ -7,10 +7,6 @@ import UIKit
 final class ActorsCollectionViewCell: UICollectionViewCell {
     // MARK: - Constants
 
-    private enum Constants {
-        static let imageRatio = 73.0 / 46.0
-    }
-
     static let reuseId = String(describing: ActorsCollectionViewCell.self)
 
     // MARK: - Visual Components
@@ -30,11 +26,9 @@ final class ActorsCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    // MARK: - Public Properties
-
     // MARK: - Private Properties
 
-    private let networkService = NetworkService(requestCreator: QueryBuilder())
+    private let networkService = NetworkService(queryBuilder: QueryBuilder())
 
     // MARK: - Initializers
 

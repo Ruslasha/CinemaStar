@@ -3,12 +3,12 @@
 
 import Foundation
 
-/// 1
+/// Ответ
 struct Response: Codable {
     let docs: [MovieDTO]
 }
 
-/// 1
+/// Модель дто
 struct MovieDTO: Codable {
     let id: Int
     let poster: Poster
@@ -24,33 +24,33 @@ struct MovieDTO: Codable {
     let similarMovies: [SimilarMovie]?
 }
 
-/// 1
+/// Постер
 struct Poster: Codable {
     let url: String?
 }
 
-/// 1
+/// Страна
 struct Country: Codable {
     let name: String
 }
 
-/// 1
+/// Язык
 struct SpokenLanguages: Codable {
     let name: String
 }
 
-/// 1
+/// Рейтинг
 struct RatingKP: Codable {
     let kp: Double
 }
 
-/// 1
+/// Актеры
 struct Person: Codable {
     let photo: String
     let name: String?
 }
 
-/// 1
+/// Похожие фильмы
 struct SimilarMovie: Codable {
     let name: String
     let poster: Poster

@@ -3,11 +3,9 @@
 
 import UIKit
 
-/// Shows movie description
+/// Ячейка с описанием
 final class DescriptionTableViewCell: UITableViewCell {
     // MARK: - Constants
-
-    private enum Constants {}
 
     static let reuseId = String(describing: DescriptionTableViewCell.self)
 
@@ -52,7 +50,7 @@ final class DescriptionTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func setupCell(movieDetail: MovieDetailed?) {
+    func setupCell(movieDetail: MovieDetail?) {
         guard let movieDetail else { return }
         descriptionLabel.text = movieDetail.description
         let year = movieDetail.year

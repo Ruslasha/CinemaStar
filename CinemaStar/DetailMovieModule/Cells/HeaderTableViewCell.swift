@@ -3,15 +3,16 @@
 
 import UIKit
 
+/// Ячейка с картинкой и названием фильма
 final class HeaderTableViewCell: UITableViewCell {
     // MARK: - Constants
 
     private enum Constants {
         static let buttonTitle = "Смотреть"
-        static let starMark = "⭐"
+        static let star = "⭐"
     }
 
-    private let networkService = NetworkService(requestCreator: QueryBuilder())
+    private let networkService = NetworkService(queryBuilder: QueryBuilder())
 
     static let reuseId = String(describing: HeaderTableViewCell.self)
 
@@ -45,7 +46,7 @@ final class HeaderTableViewCell: UITableViewCell {
 
     // MARK: - Public Properties
 
-    func setupCell(movieDetail: MovieDetailed?) {
+    func setupCell(movieDetail: MovieDetail?) {
         networkService.loadImage(by: movieDetail?.posterURL ?? "") { result in
             DispatchQueue.main.async {
                 switch result {
@@ -58,9 +59,7 @@ final class HeaderTableViewCell: UITableViewCell {
         }
         let rating = String(format: "%0.1f", movieDetail?.rating ?? 0)
         guard let name = movieDetail?.name else { return }
-        titleLabel.text = "\(String(describing: name))\n\(Constants.starMark) \(rating)"
-
-//        ratingLabel.text = "\(Constants.starMark) \(rating)"
+        titleLabel.text = "\(String(describing: name))\n\(Constants.star) \(rating)"
     }
 
     // MARK: - Private Properties

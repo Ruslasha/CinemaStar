@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// Ячейка коллекции с актерами
+/// Ячейка коллекции с рекомендациями
 final class RecomendationCollectionViewCell: UICollectionViewCell {
     // MARK: - Constants
 
@@ -35,7 +35,7 @@ final class RecomendationCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Private Properties
 
-    private let networkService = NetworkService(requestCreator: QueryBuilder())
+    private let networkService = NetworkService(queryBuilder: QueryBuilder())
 
     // MARK: - Initializers
 

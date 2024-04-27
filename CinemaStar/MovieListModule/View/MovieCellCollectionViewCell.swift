@@ -3,16 +3,14 @@
 
 import UIKit
 
-/// 1
+/// Ячейка фильма
 class MovieCell: UICollectionViewCell {
     // MARK: - Types
-
-    private var loadImageService: LoadImageServiceProtocol?
 
     // MARK: - Constants
 
     private enum Constants {
-        static let starMark = "⭐"
+        static let star = "⭐"
     }
 
     static let reuseID = "MovieCellCollectionViewCell"
@@ -69,7 +67,7 @@ class MovieCell: UICollectionViewCell {
         }
         filmTitle.text = movie.name
 
-        let starMark = Constants.starMark
+        let starMark = Constants.star
 
         ratingLabel.text = "\(starMark) \(String(format: "%0.1f", movie.rating))"
 
@@ -120,38 +118,5 @@ class MovieCell: UICollectionViewCell {
             ratingLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             ratingLabel.widthAnchor.constraint(equalTo: widthAnchor)
         ])
-    }
-}
-
-/// 1
-class ImageCache {
-    static let shared = ImageCache()
-    private let cache = NSCache<NSString, UIImage>()
-
-    func loadImageFromURL(urlString: String, completion: @escaping (UIImage?) -> Void) {
-        if let cachedImage = cache.object(forKey: urlString as NSString) {
-            completion(cachedImage)
-            return
-        }
-
-        guard let url = URL(string: urlString) else {
-            completion(nil)
-            return
-        }
-
-        URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
-            guard let data = data, error == nil else {
-                completion(nil)
-                return
-            }
-
-            let image = UIImage(data: data)
-
-            if let image = image {
-                self?.cache.setObject(image, forKey: urlString as NSString)
-            }
-
-            completion(image)
-        }.resume()
     }
 }

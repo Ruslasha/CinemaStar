@@ -3,8 +3,10 @@
 
 import UIKit
 
-/// 1
+/// Экран с деталями
 final class DetailMovieViewController: UIViewController {
+    // MARK: - Types
+
     private enum SectionType {
         case title
         case description
@@ -41,6 +43,8 @@ final class DetailMovieViewController: UIViewController {
         }
     }
 
+    // MARK: - Visual Components
+
     private lazy var mainTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .clear
@@ -59,7 +63,7 @@ final class DetailMovieViewController: UIViewController {
     private let sections: [SectionType] = [.title, .description, .actors, .language, .recomendations]
     private var viewModel: DetailMovieViewModel?
     private let id: Int
-    private var movieDetail: MovieDetailed? {
+    private var movieDetail: MovieDetail? {
         didSet {
             mainTableView.reloadData()
         }
@@ -166,7 +170,7 @@ extension DetailMovieViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if sections[section].headerTitle != nil {
-            return 36
+            return 35
         }
         return 0
     }

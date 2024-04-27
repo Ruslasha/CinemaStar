@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// 1
+/// Ячейка с языком
 final class LanguageTableViewCell: UITableViewCell {
     // MARK: - Constants
 
@@ -41,7 +41,7 @@ final class LanguageTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func setupCell(movieDetail: MovieDetailed?) {
+    func setupCell(movieDetail: MovieDetail?) {
         titleLabel.text = movieDetail?.language
     }
 

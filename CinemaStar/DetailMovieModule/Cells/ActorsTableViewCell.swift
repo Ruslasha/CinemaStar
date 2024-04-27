@@ -3,6 +3,7 @@
 
 import UIKit
 
+/// Ячейка с актерами
 final class ActorsTableViewCell: UITableViewCell {
     // MARK: - Constants
 
@@ -56,7 +57,7 @@ final class ActorsTableViewCell: UITableViewCell {
 
     // MARK: - Public Methods
 
-    func setupCell(movieDetail: MovieDetailed?) {
+    func setupCell(movieDetail: MovieDetail?) {
         actors = movieDetail?.actors
     }
 

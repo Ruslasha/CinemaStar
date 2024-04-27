@@ -3,7 +3,7 @@
 
 import Foundation
 
-/// 1
+/// Модель фильма
 struct Movie {
     let posterURL: String
     let name: String

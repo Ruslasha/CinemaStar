@@ -3,7 +3,7 @@
 
 import UIKit
 
-/// 1
+/// Экран с фильмами
 final class MovieListViewController: UIViewController {
     // MARK: - Types
 
@@ -31,6 +31,7 @@ final class MovieListViewController: UIViewController {
 
     // MARK: - Public Properties
 
+    var movieCoordinator: MovieListCoordinator?
     var viewModel: MovieListViewModelProtocol?
     var movies: [Movie]? {
         didSet {
@@ -41,10 +42,7 @@ final class MovieListViewController: UIViewController {
     // MARK: - Private Properties
 
     private var movieCollectionView: UICollectionView?
-    private var movieCollection: [Doc] = []
     private var moviePostersCollection: [Data] = []
-    private var loadImageService = LoadImageService()
-    var movieCoordinator: MovieListCoordinator?
 
     // MARK: - Initializers
 
@@ -63,7 +61,6 @@ final class MovieListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupView()
         updateView()
     }

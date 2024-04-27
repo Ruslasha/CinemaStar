@@ -7,7 +7,7 @@ import UIKit
 /// Протокол для сети
 protocol NetworkServiceProtocol {
     func getMovies(completion: @escaping (Result<[Movie], Error>) -> ())
-    func getDetailedMovie(by id: Int, completion: @escaping (Result<MovieDetailed, Error>) -> ())
+    func getDetailMovie(by id: Int, completion: @escaping (Result<MovieDetail, Error>) -> ())
     func loadImage(by urlString: String, completion: @escaping (Result<UIImage, Error>) -> ())
 }
 
@@ -16,12 +16,12 @@ final class NetworkService {
     // MARK: - Private Properties
 
     private let decoder = JSONDecoder()
-    private var requestCreator: QueryBuilderProtocol?
+    private var queryBuilder: QueryBuilderProtocol?
 
     // MARK: - Initialization
 
-    init(requestCreator: QueryBuilderProtocol?) {
-        self.requestCreator = requestCreator
+    init(queryBuilder: QueryBuilderProtocol?) {
+        self.queryBuilder = queryBuilder
     }
 
     // MARK: - Private Methods
@@ -59,7 +59,7 @@ final class NetworkService {
 
 extension NetworkService: NetworkServiceProtocol {
     func getMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
-        let request = requestCreator?.createMoviesURLRequest()
+        let request = queryBuilder?.createMoviesURLRequest()
         getData(request: request, parseProtocol: Response.self) { result in
             switch result {
             case let .success(response):
@@ -71,12 +71,12 @@ extension NetworkService: NetworkServiceProtocol {
         }
     }
 
-    func getDetailedMovie(by id: Int, completion: @escaping (Result<MovieDetailed, Error>) -> ()) {
-        let request = requestCreator?.createDetailMovieURLRequest(id: id)
+    func getDetailMovie(by id: Int, completion: @escaping (Result<MovieDetail, Error>) -> ()) {
+        let request = queryBuilder?.createDetailMovieURLRequest(id: id)
         getData(request: request, parseProtocol: MovieDTO.self) { result in
             switch result {
             case let .success(movieDTO):
-                completion(.success(MovieDetailed(dto: movieDTO)))
+                completion(.success(MovieDetail(dto: movieDTO)))
             case let .failure(error):
                 completion(.failure(error))
             }
@@ -85,7 +85,6 @@ extension NetworkService: NetworkServiceProtocol {
 
     func loadImage(by urlString: String, completion: @escaping (Result<UIImage, Error>) -> ()) {
         guard let url = URL(string: urlString) else {
-            print("Failed to create URL")
             return
         }
         let configuration = URLSessionConfiguration.default
