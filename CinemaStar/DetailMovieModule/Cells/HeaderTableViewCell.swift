@@ -12,7 +12,7 @@ final class HeaderTableViewCell: UITableViewCell {
         static let star = "⭐"
     }
 
-    private let networkService = NetworkService(queryBuilder: QueryBuilder())
+    private let networkService = NetworkService()
 
     static let reuseId = String(describing: HeaderTableViewCell.self)
 

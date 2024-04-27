@@ -51,6 +51,11 @@ class MovieCell: UICollectionViewCell {
         super.init(coder: coder)
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        titleImageView.image = nil
+    }
+
     // MARK: - Public methods
 
     func setupCell(_ movie: Movie?, viewModel: MovieListViewModelProtocol?) {

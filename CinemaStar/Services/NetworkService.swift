@@ -16,13 +16,10 @@ final class NetworkService: NetworkServiceProtocol {
     // MARK: - Private Properties
 
     private let decoder = JSONDecoder()
-    private var queryBuilder: QueryBuilderProtocol?
 
     // MARK: - Initialization
 
-    init(queryBuilder: QueryBuilderProtocol?) {
-        self.queryBuilder = queryBuilder
-    }
+    init() {}
 
     // MARK: - Private Methods
 

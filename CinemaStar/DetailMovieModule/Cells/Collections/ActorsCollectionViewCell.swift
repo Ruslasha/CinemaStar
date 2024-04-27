@@ -28,7 +28,7 @@ final class ActorsCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Private Properties
 
-    private let networkService = NetworkService(queryBuilder: QueryBuilder())
+    private let networkService = NetworkService()
 
     // MARK: - Initializers
 

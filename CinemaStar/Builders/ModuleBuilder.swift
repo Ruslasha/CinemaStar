@@ -5,8 +5,7 @@ import Foundation
 import UIKit
 
 final class ModuleBuilder {
-    var queryBuilder = QueryBuilder()
-    private lazy var networkService = NetworkService(queryBuilder: queryBuilder)
+    private lazy var networkService = NetworkService()
 
     func makeMovieListModule(coordinator: MovieListCoordinator) -> UIViewController {
         let viewModel = MovieListViewModel(networkService: networkService, coordinator: coordinator)
