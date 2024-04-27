@@ -82,6 +82,9 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "APIRequest.execute(withCompletion:):APIRequest.swift">
+      </ContextState>
+      <ContextState
          contextName = "MovieListViewModel.startFetch():MovieListViewModel.swift">
          <PersistentStrings>
             <PersistentString
@@ -99,6 +102,14 @@
       </ContextState>
       <ContextState
          contextName = "LanguageTableViewCell.setupCell(movieDetail:):LanguageTableViewCell.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in NetworkService.loadImage(by:completion:):NetworkService.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "url">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "RecomendationsTableViewCell.setSelected(_:animated:):RecomendationTableViewCell.swift">

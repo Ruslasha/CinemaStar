@@ -12,7 +12,7 @@ protocol NetworkServiceProtocol {
 }
 
 /// Сеть
-final class NetworkService {
+final class NetworkService: NetworkServiceProtocol {
     // MARK: - Private Properties
 
     private let decoder = JSONDecoder()
@@ -40,45 +40,55 @@ final class NetworkService {
             guard let self else {
                 return
             }
-            guard let downloadedData = data else {
+            guard let data = data else {
                 if let error {
                     completion(.failure(error))
                 }
                 return
             }
             do {
-                let parsedData = try self.decoder.decode(parseProtocol, from: downloadedData)
+                let parsedData = try self.decoder.decode(parseProtocol, from: data)
                 completion(.success(parsedData))
             } catch { completion(.failure(error)) }
         }
         task.resume()
     }
-}
 
-// MARK: - NetworkService - NetworkServiceProtocol
+    private var resource = MovieResource()
+    private lazy var request = APIRequest(resource: resource)
+    private var imageRequest: ImageRequest?
+    private var resourceDetail = MovieDetailResource()
+    private lazy var detailRequest = APIRequest(resource: resourceDetail)
 
-extension NetworkService: NetworkServiceProtocol {
     func getMovies(completion: @escaping (Result<[Movie], Error>) -> ()) {
-        let request = queryBuilder?.createMoviesURLRequest()
-        getData(request: request, parseProtocol: Response.self) { result in
+//        let request = queryBuilder?.createMoviesURLRequest()
+//        getData(request: request, parseProtocol: Response.self) { result in
+//            switch result {
+//            case let .success(response):
+//                let movies = self.transToMovies(response)
+//                completion(.success(movies))
+//            case let .failure(error):
+//                completion(.failure(error))
+//            }
+//        }
+        request.execute { result in
             switch result {
-            case let .success(response):
-                let movies = self.transToMovies(response)
-                completion(.success(movies))
-            case let .failure(error):
-                completion(.failure(error))
+            case let .some(movies):
+                completion(.success(movies.docs.map { Movie(dto: $0) }))
+            case .none:
+                break
             }
         }
     }
 
     func getDetailMovie(by id: Int, completion: @escaping (Result<MovieDetail, Error>) -> ()) {
-        let request = queryBuilder?.createDetailMovieURLRequest(id: id)
-        getData(request: request, parseProtocol: MovieDTO.self) { result in
+        resourceDetail.id = id
+        detailRequest.execute { result in
             switch result {
-            case let .success(movieDTO):
-                completion(.success(MovieDetail(dto: movieDTO)))
-            case let .failure(error):
-                completion(.failure(error))
+            case let .some(movie):
+                completion(.success(MovieDetail(dto: movie)))
+            case .none:
+                break
             }
         }
     }
@@ -87,17 +97,14 @@ extension NetworkService: NetworkServiceProtocol {
         guard let url = URL(string: urlString) else {
             return
         }
-        let configuration = URLSessionConfiguration.default
-        configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
-        configuration.urlCache = nil
-        let session = URLSession(configuration: configuration)
-        let task = session.dataTask(with: URLRequest(url: url)) { data, _, error in
-            if let data, let image = UIImage(data: data) {
+        imageRequest = ImageRequest(url: url)
+        imageRequest?.execute { result in
+            switch result {
+            case let .some(image):
                 completion(.success(image))
-            } else if let error {
-                completion(.failure(error))
+            case .none:
+                break
             }
         }
-        task.resume()
     }
 }

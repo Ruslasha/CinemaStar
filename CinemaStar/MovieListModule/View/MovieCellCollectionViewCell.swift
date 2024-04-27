@@ -94,7 +94,7 @@ class MovieCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             titleImageView.topAnchor.constraint(equalTo: topAnchor),
             titleImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
-            titleImageView.heightAnchor.constraint(equalToConstant: 170),
+            titleImageView.heightAnchor.constraint(equalToConstant: 220),
             titleImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             titleImageView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])

@@ -200,7 +200,7 @@ extension MovieListViewController: UICollectionViewDelegateFlowLayout {
     ) -> CGSize {
         CGSize(
             width: view.bounds.width / 2 - 25,
-            height: view.bounds.width / 2 + 25
+            height: view.bounds.width / 2 + 50
         )
     }
 
