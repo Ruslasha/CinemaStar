@@ -32,7 +32,7 @@ final class TitleHeaderView: UITableViewHeaderFooterView {
         setView()
         setConstraint()
     }
-    
+
     // MARK: - Public Methods
 
     func setTitle(text: String) {

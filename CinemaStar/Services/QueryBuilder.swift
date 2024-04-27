@@ -41,7 +41,8 @@ final class QueryBuilder: QueryBuilderProtocol {
         components.path = Constants.path + "/" + "\(id)"
         guard let url = components.url else { return nil }
         var request = URLRequest(url: url)
-        request.setValue("WQT8GHV-ZYH45ES-PE33B08-KNRNHJ2", forHTTPHeaderField: "X-API-KEY")
+//        request.setValue("WQT8GHV-ZYH45ES-PE33B08-KNRNHJ2", forHTTPHeaderField: "X-API-KEY")
+        request.setValue(KeychainService.instance.getToken(forKey: "TokenKP"), forHTTPHeaderField: "X-API-KEY")
         return request
     }
 
@@ -55,7 +56,8 @@ final class QueryBuilder: QueryBuilderProtocol {
             return nil
         }
         var request = URLRequest(url: url)
-        request.setValue("WQT8GHV-ZYH45ES-PE33B08-KNRNHJ2", forHTTPHeaderField: "X-API-KEY")
+//        request.setValue("WQT8GHV-ZYH45ES-PE33B08-KNRNHJ2", forHTTPHeaderField: "X-API-KEY")
+        request.setValue(KeychainService.instance.getToken(forKey: "TokenKP"), forHTTPHeaderField: "X-API-KEY")
         return request
     }
 }
