@@ -3,8 +3,11 @@
 
 import UIKit
 
+/// Протокол вью модели с деталями
 protocol DetailMovieViewModelProtocol {
+    /// Загрузка детальной информации
     func getDetailedMovie(by id: Int, completion: @escaping (Result<MovieDetail, Error>) -> ())
+    /// Загрузка картинки
     func loadImage(by urlString: String, completion: @escaping (Result<UIImage, Error>) -> ())
 }
 

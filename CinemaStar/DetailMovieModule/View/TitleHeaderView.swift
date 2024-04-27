@@ -19,10 +19,6 @@ final class TitleHeaderView: UITableViewHeaderFooterView {
         return label
     }()
 
-    // MARK: - Public Properties
-
-    // MARK: - Private Properties
-
     // MARK: - Initializers
 
     override init(reuseIdentifier: String?) {
@@ -36,9 +32,7 @@ final class TitleHeaderView: UITableViewHeaderFooterView {
         setView()
         setConstraint()
     }
-
-    // MARK: - Life Cycle
-
+    
     // MARK: - Public Methods
 
     func setTitle(text: String) {

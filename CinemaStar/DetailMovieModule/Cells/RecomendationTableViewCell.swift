@@ -31,8 +31,6 @@ final class RecomendationsTableViewCell: UITableViewCell {
         return collectionView
     }()
 
-    // MARK: - Public Properties
-
     // MARK: - Private Properties
 
     private var similarMovies: [SimilarMovie?]? {

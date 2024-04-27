@@ -28,10 +28,6 @@ final class DescriptionTableViewCell: UITableViewCell {
         return label
     }()
 
-    // MARK: - Public Properties
-
-    // MARK: - Private Properties
-
     // MARK: - Initializers
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -45,8 +41,6 @@ final class DescriptionTableViewCell: UITableViewCell {
         setViews()
         setConstraints()
     }
-
-    // MARK: - Life Cycle
 
     // MARK: - Public Methods
 

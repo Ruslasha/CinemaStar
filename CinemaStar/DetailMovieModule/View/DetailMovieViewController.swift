@@ -128,7 +128,7 @@ final class DetailMovieViewController: UIViewController {
     }
 }
 
-// MARK: - MainViewController + UITableViewDataSource
+// MARK: - DetailMovieViewController + UITableViewDataSource
 
 extension DetailMovieViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -156,7 +156,7 @@ extension DetailMovieViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - MainViewController + UITableViewDelegate
+// MARK: - DetailMovieViewController + UITableViewDelegate
 
 extension DetailMovieViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

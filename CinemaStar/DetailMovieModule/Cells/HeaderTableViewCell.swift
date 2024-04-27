@@ -62,8 +62,6 @@ final class HeaderTableViewCell: UITableViewCell {
         titleLabel.text = "\(String(describing: name))\n\(Constants.star) \(rating)"
     }
 
-    // MARK: - Private Properties
-
     // MARK: - Initializers
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -77,8 +75,6 @@ final class HeaderTableViewCell: UITableViewCell {
         setViews()
         setConstraints()
     }
-
-    // MARK: - Public Methods
 
     // MARK: - Private Methods
 

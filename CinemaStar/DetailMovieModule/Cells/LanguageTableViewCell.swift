@@ -19,10 +19,6 @@ final class LanguageTableViewCell: UITableViewCell {
         return label
     }()
 
-    // MARK: - Public Properties
-
-    // MARK: - Private Properties
-
     // MARK: - Initializers
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -36,8 +32,6 @@ final class LanguageTableViewCell: UITableViewCell {
         setView()
         setConstraints()
     }
-
-    // MARK: - Life Cycle
 
     // MARK: - Public Methods
 

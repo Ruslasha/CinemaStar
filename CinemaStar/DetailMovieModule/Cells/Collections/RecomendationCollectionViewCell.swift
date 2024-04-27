@@ -31,8 +31,6 @@ final class RecomendationCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
-    // MARK: - Public Properties
-
     // MARK: - Private Properties
 
     private let networkService = NetworkService(queryBuilder: QueryBuilder())
@@ -50,8 +48,6 @@ final class RecomendationCollectionViewCell: UICollectionViewCell {
         setViews()
         setConstraint()
     }
-
-    // MARK: - Life Cycle
 
     // MARK: - Public Methods
 
